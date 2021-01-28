@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".MainActivity">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/bar_layout"
+        />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/pic"
+        android:src="@drawable/tasklogo"
+        ></androidx.appcompat.widget.AppCompatImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@+id/pic"
+        android:textStyle="bold"
+        android:text="Water Check"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp">
+
+    </TextView>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/horiz"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_below="@+id/pic"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_margin="4dp"
+                android:text="pH"
+                android:background="@drawable/btn_transparent"
+                android:textColor="#7D7D7D"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:id="@+id/btn0"></Button>
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_margin="4dp"
+                android:text="Alkalinity"
+                android:background="@drawable/btn_round"
+                android:textColor="#7D7D7D"
+
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:id="@+id/btn1"></Button>
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_margin="4dp"
+                android:text="Sodium"
+                android:background="@drawable/btn_transparent"
+                android:textColor="#7D7D7D"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:id="@+id/btn2"></Button>
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_margin="4dp"
+                android:text="Chlorine"
+                android:background="@drawable/btn_transparent"
+                android:textColor="#7D7D7D"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:id="@+id/btn3"></Button>
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/horiz"
+        android:layout_marginTop="25dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+
+        android:id="@+id/tab"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabBackground="@drawable/tab_background"
+            app:tabTextColor="#7D7D7D"
+            app:tabSelectedTextColor="#000000"
+            app:tabIndicatorHeight="0dp"
+            app:tabMode="fixed"
+            app:tabGravity="center">
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+
+                android:text="1 Day">
+
+            </com.google.android.material.tabs.TabItem>
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="1 Week"
+                >
+
+            </com.google.android.material.tabs.TabItem>
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="1 Month"
+                >
+
+            </com.google.android.material.tabs.TabItem>
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="1 Cycle"
+                >
+
+            </com.google.android.material.tabs.TabItem>
+        </com.google.android.material.tabs.TabLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_below="@+id/tab"
+        android:id="@+id/sep"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_height="2dp"
+        android:background="#FFFFFF"/>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/linechart"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:layout_below="@+id/sep"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+
+        ></com.github.mikephil.charting.charts.LineChart>
+    <View
+        android:layout_width="match_parent"
+        android:layout_below="@+id/linechart"
+        android:id="@+id/sep2"
+        android:layout_height="2dp"
+        android:background="#707070"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/upload"
+        android:layout_marginLeft="20dp"
+        android:clickable="true"
+        android:layout_below="@+id/sep2">
+
+    </androidx.appcompat.widget.AppCompatImageView>
+
+
+</RelativeLayout>
